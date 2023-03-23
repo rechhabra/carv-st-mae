@@ -11,6 +11,7 @@ scipy
 PyTube
 pandas
 matplotlib
+wget
 #----------------------------------------#
 
 

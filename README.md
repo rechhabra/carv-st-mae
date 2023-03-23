@@ -6,15 +6,23 @@ The project proposal and milestone report are located in the `documents` folder 
 
 **Authors:** <br> Reshab Chhabra, Mark D. Yang
 
-Installation Tutorial
----------------------
-Download the repository and install the dependencies using the following command:
+## Installation Tutorial
 
+1. Download the repository and install the dependencies using the following command in the root directory of this repository:
 ```bash
-pip install -r requirements.txt
+pip install -r code/requirements.txt
 ```
+2. Download a pre-trained MAE model finetuned to videos (tuned to Kinetics 400 dataset) by running the command **in the `models` folder**:<br>
+```bash
+wget 'https://dl.fbaipublicfiles.com/video-mae-100x4-joint.pth' -O checkpoint.pth
+```
+or
+```
+curl 'https://dl.fbaipublicfiles.com/video-mae-100x4-joint.pth' -O checkpoint.pth
+```
+Depending on your operating system.
 
-And see the `code/imported_repos/README.md` file for more information on downloading the dependent, imported repositories.
+3. See the `code/imported_repos/README.md` file for more information on downloading the dependent, imported repositories.
 
-**Citation**:<br>
+<br><br><br><br>**Citation**:<br>
 Chhabra, R., & Yang, M. D. (2023). Algorithmic Video Reduction by Estimating Chunk Significance Using Spatial-Temporal Masked Auto Encoders. _GitHub_, 1-1. github.com/rechhabra/carv-st-mae
