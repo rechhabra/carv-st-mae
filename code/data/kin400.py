@@ -110,3 +110,8 @@ def load_K400_videos():
 
 load_K400_videos()
 
+import glob
+for file in glob.glob("/content/Kinetics400/videos/test/*"):
+  _, ext = os.path.splitext(file)
+  if len(ext) == 0:
+    os.rename(file, file + ".mp4")
