@@ -6,8 +6,15 @@ iopath
 common
 fvcore
 av
+scikit-video
+scipy
+PyTube
+pandas
+matplotlib
 #----------------------------------------#
 
+
+#----------------------------------------#
 ###   Version-dependent requirements   ###
 timm==0.4.5 # 0.3.2 does not work in Colab
 #----------------------------------------#
