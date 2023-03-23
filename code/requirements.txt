@@ -1,0 +1,13 @@
+### Non-version-dependent requirements ###
+opencv3
+simplejson
+matplotlib
+iopath
+common
+fvcore
+av
+#----------------------------------------#
+
+###   Version-dependent requirements   ###
+timm==0.4.5 # 0.3.2 does not work in Colab
+#----------------------------------------#
