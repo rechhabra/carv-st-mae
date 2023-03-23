@@ -6,6 +6,15 @@ The project proposal and milestone report are located in the `documents` folder 
 
 **Authors:** <br> Reshab Chhabra, Mark D. Yang
 
+Installation Tutorial
+---------------------
+Download the repository and install the dependencies using the following command:
+
+```bash
+pip install -r requirements.txt
+```
+
+And see the `code/imported_repos/README.md` file for more information on downloading the dependent, imported repositories.
 
 **Citation**:<br>
 Chhabra, R., & Yang, M. D. (2023). Algorithmic Video Reduction by Estimating Chunk Significance Using Spatial-Temporal Masked Auto Encoders. _GitHub_, 1-1. github.com/rechhabra/carv-st-mae
