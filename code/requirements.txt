@@ -12,6 +12,8 @@ PyTube
 pandas
 matplotlib
 wget
+numpy
+glob2
 #----------------------------------------#
 
 

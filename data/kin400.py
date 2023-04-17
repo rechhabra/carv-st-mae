@@ -7,7 +7,7 @@ import tarfile
 from multiprocessing import Pool
 from tqdm import tqdm
 import pandas as pd
-
+import glob
 # From https://github.com/chi0tzp/KineticX-Downloader
 
 global video_output_dir, error_file
@@ -108,10 +108,11 @@ def load_K400_videos():
             pass
         pool.close()
 
-load_K400_videos()
+def convert_to_mp4():
+  for file in glob.glob("/data/Kinetics400/videos/test/*"):
+    _, ext = os.path.splitext(file)
+    if len(ext) == 0:
+      os.rename(file, file + ".mp4")
 
-import glob
-for file in glob.glob("/content/Kinetics400/videos/test/*"):
-  _, ext = os.path.splitext(file)
-  if len(ext) == 0:
-    os.rename(file, file + ".mp4")
+load_K400_videos()
+convert_to_mp4()

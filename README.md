@@ -24,5 +24,9 @@ Depending on your operating system.
 
 3. See the `code/imported_repos/README.md` file for more information on downloading the dependent, imported repositories.
 
+## Demo
+
+See the `carv_st_mae_demo.ipynb` located in this folder to see how the figures are made and how the algorithm works.
+
 <br><br><br><br>**Citation**:<br>
 Chhabra, R., & Yang, M. D. (2023). Algorithmic Video Reduction by Estimating Chunk Significance Using Spatial-Temporal Masked Auto Encoders. _GitHub_, 1-1. github.com/rechhabra/carv-st-mae
