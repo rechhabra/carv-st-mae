@@ -26,7 +26,7 @@ Depending on your operating system.
 
 ## Demo
 
-See the `carv_st_mae_demo.ipynb` located in this folder to see how the figures are made and how the algorithm works.
+To see a demonstration of the repo and figures replication, check out the [colab notebook](https://colab.research.google.com/drive/1tG1-e4f5A5SFVvhDvZMGrWLRA_CE4Llb?usp=sharing). The downloaded notebook `carv_st_mae_demo.ipynb` is also conveniently located in this folder.
 
 <br><br><br><br>**Citation**:<br>
-Chhabra, R., & Yang, M. D. (2023). Algorithmic Video Reduction by Estimating Chunk Significance Using Spatial-Temporal Masked Auto Encoders. _GitHub_, 1-1. github.com/rechhabra/carv-st-mae
+Chhabra, R., & Yang, M. D. (2023). Algorithmic Video Reduction by Estimating Chunk Significance Using Spatial-Temporal Masked Auto Encoders. _GitHub_, github.com/rechhabra/carv-st-mae
