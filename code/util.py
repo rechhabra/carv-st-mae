@@ -93,19 +93,27 @@ class CompressionStatisticGenerator:
     This class is to generate videos of a certain compression type
     to compare compression statistics with the original video
     """
-    carv_st_mae: CARVSTMAE = CARVSTMAE(mask_ratio=0.98, num_chunk_sampling=500)
+    carv_st_mae: CARVSTMAE
+
+    def __init__(self, carv_st_mae: CARVSTMAE = None) -> None:
+        self.carv_st_mae = carv_st_mae or CARVSTMAE(mask_ratio=0.98, num_chunk_sampling=500)
 
     def generate_simulated_video(
             self,
-            mse_sum: np.nparray,
+            mse_sum: np.ndarray,
             original_video_filepath: str,
             output_video_name: str,
             simulate_downsampling=False,
             simulate_randomchunkselection=False):
+        """
+        CARV method: both false (default)
+        Naive downsampling (Every Nth frames): downsampling true
+        Every Nth frames with random offset: randomchunkselection true
+        """
 
         if (simulate_downsampling == False and simulate_randomchunkselection == False):
-            self.carv_st_mae.compress_video(
-                original_video_filepath, output_video_name)
+            self.carv_st_mae.generate_carv_video(
+                mse_sum, original_video_filepath, output_video_name)
 
         mse_sum = self.carv_st_mae.normalize_mse_sum(mse_sum)
 
@@ -115,7 +123,7 @@ class CompressionStatisticGenerator:
         # similar to how many frames to skip in downsampling
         mse_sum /= self.carv_st_mae.refresh_rate
 
-        if (simulate_downsampling):
+        if (simulate_downsampling or simulate_randomchunkselection):
             regdown = np.zeros(mse_sum.shape)
             regdown.fill(mse_sum.mean())
             mse_sum = regdown
@@ -142,7 +150,7 @@ class CompressionStatisticGenerator:
             prev_increment = np.random.rand(mse_height, mse_width)
             prev_increment += 1
 
-        out = cv2.VideoWriter('output_file_name', cv2.VideoWriter_fourcc(
+        out = cv2.VideoWriter(output_video_name, cv2.VideoWriter_fourcc(
             *'mp4v'), self.carv_st_mae.video_fps, (frame_width, frame_height))
         # Read until video is completed
         frame_count = 0
@@ -165,7 +173,7 @@ class CompressionStatisticGenerator:
                             frame_height // mse_height
 
                     if prev_increment[mse_width_ind][mse_height_ind] >= 1:
-                        prev_increment[mse_width_ind][mse_height_ind] += -1
+                        prev_increment[mse_width_ind][mse_height_ind] -= 1
                         next_frame[left:right,
                                    top:bottom] = frame[left:right, top:bottom]
                         prev_frame[left:right,
@@ -220,3 +228,4 @@ class CompressionStatisticGenerator:
             strred, final_after, final_before = skvideo.measure.strred(
                 original_grey, video)
             print("ST-RRED: ", final_after, "ST-RRED SSN: ", final_before)
+            
