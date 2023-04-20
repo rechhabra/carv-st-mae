@@ -1,5 +1,6 @@
 ### Non-version-dependent requirements ###
 #opencv3
+opencv-python
 simplejson
 matplotlib
 iopath
