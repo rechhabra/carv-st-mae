@@ -1,5 +1,7 @@
 # Algorithmic Video Reduction by Estimating Chunk Significance
 
+![CARV Demo](visualizations/carvstmae_compression_comparison_gif_0.7.gif)
+
 This repository is for the paper "Algorithmic Video Reduction by Estimating Chunk Significance Using Spatial-Temporal Masked Auto Encoders", which is made for the graduate course "Artificial Intelligence" at Boston University.
 
 The project proposal and milestone report are located in the `documents` folder and the code is respectively located in the `code` folder.
