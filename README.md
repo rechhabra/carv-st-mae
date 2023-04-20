@@ -26,6 +26,8 @@ Depending on your operating system.
 
 3. See the `code/imported_repos/README.md` file for more information on downloading the dependent, imported repositories.
 
+4. See the `data/README.md` file for more information on downloading the data used in the paper.
+
 ## Demo
 
 To see a demonstration of the repo and figures replication, check out the [colab notebook](https://colab.research.google.com/drive/1tG1-e4f5A5SFVvhDvZMGrWLRA_CE4Llb?usp=sharing). The downloaded notebook `carv_st_mae_demo.ipynb` is also conveniently located in this folder.
